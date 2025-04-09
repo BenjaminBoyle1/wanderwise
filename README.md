@@ -1,111 +1,143 @@
-# 🧭 WanderWise – Smart Travel Planner
+# 🌍 WanderWise – Smart Travel Planner
 
-**WanderWise** is a full-featured travel planning web app that helps users build trips, manage itineraries, track expenses, and check weather forecasts — all from a clean, modern dashboard.
+WanderWise is a modern, interactive travel planning web app that helps users organize trips, track expenses, create itineraries, and view location-based weather — all in one beautiful dashboard.
 
----
-
-## 🚀 Features
-
-- 🗺️ Interactive Map Interface (Google Maps)
-- 📍 Save & manage trips based on real locations
-- 📅 Itinerary Builder with day-by-day planning
-- 💸 Expense Tracker with total calculator
-- 🌦 3-Day Weather Forecasts by city or geolocation
-- 🔄 Fahrenheit / Celsius (displayed together)
-- 📌 Auto-suggest cities as you type
-- 📍 Use My Location to pull weather instantly
-- 🕓 Group forecasts into Morning / Afternoon / Evening
-- 📦 Recent search memory
-- 🔐 Authentication-ready structure (Firebase-compatible)
+Built using **Vite**, **vanilla JS**, and modular HTML/CSS structure, it’s optimized for performance, clarity, and user experience.
 
 ---
 
-## 📂 Project Structure
+## ✨ Features
+
+### 🗺️ Trip Dashboard
+- Add new trips by clicking anywhere on the interactive Google Map
+- Location is reverse geocoded to city/state/country
+- Trips saved with start/end dates and number of travelers
+- Custom markers on map via `AdvancedMarkerElement`
+
+### 🧾 Expense Tracker
+- Track trip-specific expenses in multiple currencies (USD, EUR, GBP, JPY)
+- Set frequency: once, daily, or per person
+- Smart cost calculations: shows breakdown like `($40 × 3 days × 2 travelers = $240)`
+- Filter expenses by category
+- Live pie chart using Chart.js
+- Export to CSV or print/save as PDF
+
+### 📅 Itinerary Builder
+- Add detailed daily activities per trip
+- Groups entries by date with expandable forecast
+- Weather forecast displayed inline per day
+- Export readable itinerary for printing or saving
+
+### 🌦️ Weather Page
+- View 3-day forecasts for any city
+- Auto-suggest city names
+- Geolocation support (“Use My Location”)
+- Forecasts cached locally for fast reuse
+
+---
+
+## 🧠 Tech Stack
+
+- ⚡ **Vite** for blazing fast dev/build
+- 🗺️ **Google Maps JavaScript API** + Advanced Markers
+- 💸 **CurrencyFreaks API** for exchange rates
+- ☁️ **OpenWeatherMap API** for forecasts
+- 📦 **LocalStorage** for persistence
+- 📊 **Chart.js** for expense visualization
+- ♿ Fully accessible labels, responsive layout, and dark-mode ready
+
+---
+
+## 🗂️ Project Structure
 
 ```
-wanderwise/
-├── index.html              # Main dashboard
+wander-wise/
+├── public/
+│   ├── images/
+│   ├── json/
+│   └── partials/             # header.html and footer.html
 ├── pages/
+│   ├── index.html
+│   ├── expenses.html
 │   ├── itinerary.html
 │   ├── weather.html
-│   ├── login.html
-│   └── expenses.html
-├── public/
-│   ├── partials/           # header.html / footer.html
-│   ├── images/
-│   └── json/
 ├── src/
 │   ├── css/
 │   │   └── styles.css
-│   └── js/
-│       ├── dashboard.js
-│       ├── itinerary.js
-│       ├── weather.js
-│       ├── auth.js
-│       └── include.js
-├── .env
+│   ├── js/
+│   │   ├── dashboard.js
+│   │   ├── expenses.js
+│   │   ├── itinerary.js
+│   │   ├── weather.js
+│   │   └── include.js
+├── .env                      # API keys
 ├── vite.config.js
 └── README.md
 ```
 
 ---
 
-## 🔧 Tech Stack
+## 🛠️ Setup & Development
 
-- **Vite** – Lightning-fast dev server & bundler  
-- **JavaScript Modules** – Fully separated concerns  
-- **Google Maps API** – Location search + pin drop  
-- **OpenWeatherMap API** – 3-day forecast  
-- **localStorage** – Save trips, itineraries, and searches  
-- **Netlify** – Hosting & automatic builds
+### 1. Clone the repo
 
----
-
-## 📦 Environment Variables
-
-Create a `.env` file in your project root:
-
-```
-VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-VITE_OPENWEATHER_API_KEY=your_openweathermap_api_key
+```bash
+git clone https://github.com/yourusername/wander-wise.git
+cd wander-wise
 ```
 
-> ✅ Make sure to restart your dev server after editing `.env`.
+### 2. Install dependencies
 
----
-
-## 🧪 Local Development
-
-```
+```bash
 npm install
+```
+
+### 3. Add your API keys in a `.env` file:
+
+```env
+VITE_GOOGLE_MAPS_API_KEY=your_google_maps_key
+VITE_GOOGLE_MAP_ID=your_map_id_here
+VITE_OPENWEATHER_API_KEY=your_openweather_key
+VITE_CURRENCY_API_KEY=your_currencyfreaks_key
+```
+
+### 4. Start the dev server
+
+```bash
 npm run dev
 ```
 
-Visit `http://localhost:5173`
+### 5. Build for production
+
+```bash
+npm run build
+```
 
 ---
 
 ## 🌐 Deployment
 
-We recommend [Netlify](https://netlify.com) for instant deployment:
+Easily deployable to **Netlify**, **Vercel**, or **GitHub Pages** (with Vite static adapter).
 
-1. Connect your GitHub repo  
-2. Set build command: `vite build`  
-3. Set publish directory: `dist/`  
-4. Add your environment variables in **Netlify > Site Settings > Environment**  
-
-Done! 🚀
+Make sure your environment variables are set in the Netlify Dashboard (`.env` not used at runtime unless bundled with a server).
 
 ---
 
-## 🙌 Credits
+## 🤝 Credits
 
-- UI Design: Custom + [Coolors.co](https://coolors.co/) palette  
-- Fonts: [Roboto](https://fonts.google.com/specimen/Roboto), [Open Sans](https://fonts.google.com/specimen/Open+Sans)  
-- Icons: Unicode emojis and [OpenWeatherMap](https://openweathermap.org/)
+- [OpenWeatherMap](https://openweathermap.org)
+- [CurrencyFreaks](https://currencyfreaks.com)
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
+- [Coolors](https://coolors.co/palette/006d77-83c5be-edf6f9-ffddd2-e29578) for the color palette
 
 ---
 
-## 📝 License
+## 📸 Screenshots
 
-MIT License – free to modify and deploy!
+> Add screenshots of dashboard, expenses, itinerary, and map here.
+
+---
+
+## 📄 License
+
+MIT License. Use freely, build boldly. 🚀
