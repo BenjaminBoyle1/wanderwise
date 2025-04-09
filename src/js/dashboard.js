@@ -140,8 +140,12 @@ function addMarker(trip) {
   const { AdvancedMarkerElement } = google.maps.marker;
 
   const pin = document.createElement("div");
-  pin.className = "advanced-marker";
-  pin.textContent = trip.name;
+  pin.className = "custom-marker";
+  pin.innerHTML = `
+    <div class="marker-label">
+      📍 ${trip.name}
+    </div>
+  `;
 
   const marker = new AdvancedMarkerElement({
     map,
@@ -151,6 +155,8 @@ function addMarker(trip) {
 
   markers.push(marker);
 }
+
+
 
 function clearMarkers() {
   markers.forEach(marker => marker.map = null);
