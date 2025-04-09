@@ -243,7 +243,10 @@ document.getElementById("export-pdf").addEventListener("click", () => {
   window.print();
 });
 
-await fetchExchangeRates();
-loadTripDropdown();
-renderExpenses();
-renderChart();
+(async () => {
+  await fetchExchangeRates();
+  loadTripDropdown();
+  renderExpenses();
+  renderChart();
+})();
+
