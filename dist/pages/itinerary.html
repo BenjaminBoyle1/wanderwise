@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Itinerary | WanderWise</title>
+  <script type="module" crossorigin src="/assets/itinerary-C_rKlq2e.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/include-BTc5-h4F.js">
+  <link rel="stylesheet" crossorigin href="/assets/include-CnhobzHl.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container">
+    <section class="card">
+      <h2>🗂️ Select a Trip</h2>
+      <select id="trip-select">
+        <option value="">-- Choose a Trip --</option>
+      </select>
+    </section>
+
+    <section class="card">
+      <h2>📅 Add to Itinerary</h2>
+      <input type="date" id="itinerary-date" />
+      <input type="time" id="start-time" />
+      <input type="time" id="end-time" />
+      <input type="text" id="itinerary-activity" placeholder="Activity (e.g., Eiffel Tower)" />
+      <button class="btn" id="add-itinerary-btn">Add Activity</button>
+    </section>
+
+    <section class="card">
+      <h2>📝 Current Itinerary</h2>
+      <div id="grouped-itinerary"></div>
+      <button class="btn" id="export-btn">🖨 Export Itinerary</button>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>
