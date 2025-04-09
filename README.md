@@ -132,12 +132,3 @@ Make sure your environment variables are set in the Netlify Dashboard (`.env` no
 
 ---
 
-## 📸 Screenshots
-
-> Add screenshots of dashboard, expenses, itinerary, and map here.
-
----
-
-## 📄 License
-
-MIT License. Use freely, build boldly. 🚀
