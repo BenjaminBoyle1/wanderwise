@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expenses | WanderWise</title>
+  <link rel="stylesheet" href="/src/css/styles.css" />
+  <script type="module" src="/src/js/expenses.js"></script>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container">
+    <div class="card-row">
+      <!-- LEFT: Add Expense Form -->
+      <section class="card">
+        <h2>💸 Add Expense</h2>
+
+        <label for="trip-select">Select Trip:</label>
+        <select id="trip-select"></select>
+
+        <form id="expense-form">
+          <label for="expense-name">Name</label>
+          <input type="text" id="expense-name" placeholder="Expense Name" />
+
+          <label for="expense-amount">Amount</label>
+          <input type="number" id="expense-amount" placeholder="Amount" />
+
+          <label for="expense-currency">Currency</label>
+          <select id="expense-currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY">JPY</option>
+            <option value="GBP">GBP</option>
+          </select>
+
+          <label for="expense-category">Category</label>
+          <select id="expense-category">
+            <option value="Flights">✈️ Flights</option>
+            <option value="Hotels">🏨 Hotels</option>
+            <option value="Food">🍽️ Food</option>
+            <option value="Activities">🎟️ Activities</option>
+            <option value="Shopping">🛍️ Shopping</option>
+            <option value="Transport">🚕 Transport</option>
+          </select>
+
+          <label for="expense-frequency">Frequency</label>
+          <select id="expense-frequency">
+            <option value="once">Once</option>
+            <option value="daily">Daily</option>
+            <option value="per-person">Per Person</option>
+          </select>
+
+          <button type="submit" class="btn">Add Expense</button>
+        </form>
+      </section>
+
+      <!-- RIGHT: Filters + List -->
+      <section class="card">
+        <h2>📋 Expenses</h2>
+
+        <label for="filter-category">Filter by Category:</label>
+        <select id="filter-category">
+          <option value="All">All</option>
+          <option value="Flights">✈️ Flights</option>
+          <option value="Hotels">🏨 Hotels</option>
+          <option value="Food">🍽️ Food</option>
+          <option value="Activities">🎟️ Activities</option>
+          <option value="Shopping">🛍️ Shopping</option>
+          <option value="Transport">🚕 Transport</option>
+        </select>
+
+        <ul id="expense-list" class="expense-list"></ul>
+        <p><strong>Total:</strong> $<span id="expense-total">0.00</span></p>
+      </section>
+    </div>
+
+    <!-- FULL WIDTH BELOW -->
+    <section class="card">
+      <h2>📊 Expense Breakdown</h2>
+      <canvas id="expense-chart"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>📤 Export</h2>
+      <button class="btn" id="export-csv">Export CSV</button>
+      <button class="btn" id="export-pdf">Print / Save as PDF</button>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>

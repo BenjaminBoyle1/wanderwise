@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather | WanderWise</title>
+  <link rel="stylesheet" href="/src/css/styles.css" />
+  <script type="module" src="/src/js/weather.js"></script>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container">
+    <section class="card">
+      <h2>🌦 Weather Forecast</h2>
+      <div class="search-bar">
+        <input type="text" id="weather-location" placeholder="Enter a city" autocomplete="off" />
+        <button class="btn" id="get-weather-btn">Get Forecast</button>
+        <button class="btn" id="use-my-location">📍 Use My Location</button>
+      </div>
+      <ul id="suggestions" class="suggestions-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>📍 Recent Searches</h2>
+      <div id="recent-searches" class="recent-searches"></div>
+    </section>
+
+    <section class="card">
+      <h2>📅 3-Day Forecast</h2>
+      <div id="weather-results" class="forecast-container"></div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+</body>
+</html>
